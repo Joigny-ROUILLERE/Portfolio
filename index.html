@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Joigny Rouillère — Ingénieur conception mécanique</title>
+<meta name="description" content="Portfolio de Joigny Rouillère : du bac pro aéronautique au cycle ingénieur en conception mécanique. Projets, parcours et réalisations.">
+<meta name="robots" content="noindex, nofollow"><!-- TEST : retirer cette ligne à la publication officielle -->
+<meta name="theme-color" content="#0b0b0c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="#top" aria-label="Joigny Rouillère, accueil">Joigny Rouillère</a>
+  <nav class="toplinks" aria-label="Liens externes">
+    <a href="https://www.linkedin.com/in/joigny-rouill%C3%A8re-331572226/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="assets/cv/CV_Joigny_ROUILLERE.pdf" target="_blank" rel="noopener">CV&nbsp;↓</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ============ 1. BANDEAU D'ACCUEIL ============ -->
+  <section class="hero" id="projets" aria-labelledby="hero-title">
+    <div class="hero-inner">
+      <h1 id="hero-title">Du hangar au bureau d’études, <em>je conçois des pièces qui se fabriquent.</em></h1>
+      <p class="hero-sub">Élève ingénieur en conception mécanique · Mines Nancy – InSIC<br>
+        Apprenti ingénieur bureau d’études chez VIP Industries · Recherche un poste d’ingénieur conception / chef de projet dès octobre 2027</p>
+    </div>
+
+    <div class="carousel-wrap">
+      <div class="carousel" id="carousel" tabindex="0" aria-label="Projets principaux, faire défiler horizontalement"></div>
+      <button class="car-btn car-prev is-hidden" id="car-prev" aria-label="Projets précédents">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+      </button>
+      <button class="car-btn" id="car-next" aria-label="Projets suivants">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+    <p class="scroll-hint">Défile pour suivre mon parcours <span aria-hidden="true">↓</span></p>
+  </section>
+
+  <!-- ============ 2. PARCOURS (TIMELINE) ============ -->
+  <section class="section" id="parcours" aria-labelledby="parcours-title">
+    <div class="section-head">
+      <p class="eyebrow">Parcours</p>
+      <h2 id="parcours-title">Du bac pro à l’école d’ingénieurs</h2>
+      <p class="lede">Chaque étape s’ouvre sur les projets que j’y ai menés. Clique sur un projet pour voir mon rôle, mes outils et les résultats.</p>
+    </div>
+    <div class="timeline" id="timeline"></div>
+  </section>
+
+  <!-- ============ 3. HORS ÉCOLE ============ -->
+  <section class="section" id="hors-ecole" aria-labelledby="perso-title">
+    <div class="section-head">
+      <p class="eyebrow">Hors école</p>
+      <h2 id="perso-title">Ce qui me fait avancer</h2>
+      <p class="lede">Engagement associatif, endurance, voyages : la même énergie que dans mes projets.</p>
+    </div>
+    <div class="perso" id="perso"></div>
+  </section>
+
+  <!-- ============ 4. CONTACT ============ -->
+  <section class="section contact" id="contact" aria-labelledby="contact-title">
+    <p class="eyebrow">Contact</p>
+    <h2 id="contact-title">Un projet, un poste, une question&nbsp;?</h2>
+    <p class="lede">Je cherche un poste d’ingénieur conception / chef de projet à partir d’octobre 2027. Parlons-en.</p>
+    <div class="contact-actions">
+      <a class="btn btn-primary" href="mailto:joigny.rouillere91@gmail.com">joigny.rouillere91@gmail.com</a>
+      <a class="btn" href="https://www.linkedin.com/in/joigny-rouill%C3%A8re-331572226/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="assets/cv/CV_Joigny_ROUILLERE.pdf" target="_blank" rel="noopener">Télécharger mon CV</a>
+    </div>
+    <p class="legal">© <span id="year"></span> Joigny Rouillère · Saint-Dié-des-Vosges</p>
+  </section>
+</main>
+
+<!-- Barre de navigation flottante -->
+<nav class="pill" aria-label="Navigation principale">
+  <a href="#projets" data-target="projets" class="is-active">Projets</a>
+  <a href="#parcours" data-target="parcours">Parcours</a>
+  <a href="#hors-ecole" data-target="hors-ecole">Hors école</a>
+  <a href="#contact" data-target="contact">Contact</a>
+</nav>
+
+<!-- Fiche projet -->
+<div class="modal" id="modal" hidden>
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="m-title">
+    <button class="modal-close" data-close aria-label="Fermer">×</button>
+    <div class="m-media" id="m-media"></div>
+    <div class="m-body">
+      <p class="eyebrow" id="m-kicker"></p>
+      <h3 id="m-title"></h3>
+      <p class="m-lead" id="m-lead"></p>
+      <dl class="m-facts" id="m-facts"></dl>
+      <div class="m-actions" id="m-actions"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Image en plein écran -->
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Image en plein écran">
+  <div class="lb-scroll" id="lb-scroll"><img id="lb-img" alt=""></div>
+  <button class="lb-btn lb-close" id="lb-close" type="button" aria-label="Fermer l’image">×</button>
+  <button class="lb-btn lb-nav lb-prev" id="lb-prev" type="button" aria-label="Image précédente">‹</button>
+  <button class="lb-btn lb-nav lb-next" id="lb-next" type="button" aria-label="Image suivante">›</button>
+  <p class="lb-bar"><span id="lb-count"></span><span id="lb-hint"></span></p>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<noscript><p style="padding:2rem;color:#ccc">Ce site nécessite JavaScript pour afficher les projets.</p></noscript>
+</body>
+</html>
